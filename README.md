@@ -1,6 +1,6 @@
 # Project-A-Team-3
 
-##### VCU, Spring 2020, CMSC 355: Software Engineer: Spec and Des.
+##### VCU, Spring 2020, CMSC 355: Software Engineer: Specification and Design.
 
 
 ## Project A:
