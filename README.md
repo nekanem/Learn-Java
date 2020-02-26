@@ -19,9 +19,9 @@ Programming is hard but with practice, anyone can learn it. Novice programmers n
 * Android Studio
 
 ## Authors:
-* Vy Nguyen
-* Nathaniel Ekanem
-* Pedram Maleki
-* Paramveer Singh
+* Teammate 1: Vy Nguyen - VeeNguyen 
+* Teammate 2: Nathaniel Ekanem - nakenem 
+* Teammate 3: Pedram Maleki - pedramvcu 
+* Teammate 4: Paramveer Singh - paul1204 
 
 
