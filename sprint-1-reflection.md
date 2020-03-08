@@ -1,8 +1,8 @@
-User Stories:
+## User Stories:
     Forgot Password - Users will be able to reset their password by using the Forgot Password button - 
     Test Cases will be to see if the button works, but also tests to see if the updated password will be the correct credential
 
-Team Reflection:
+## Team Reflection:
     Pedram, Nate, and Vy worked on front end, database, programming the activity and app design,
     while Paul had worked on testing. 
     Front end and app design relate to the appearance of the login page and the functionality (being able to type in text, get a response,).
