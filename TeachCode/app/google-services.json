@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "847433455353",
+    "firebase_url": "https://teachcode-32f98.firebaseio.com",
+    "project_id": "teachcode-32f98",
+    "storage_bucket": "teachcode-32f98.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:847433455353:android:133ffa0d4658bb088cf428",
+        "android_client_info": {
+          "package_name": "com.example.teachcode"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "847433455353-bc41jcrptv5sgltfpdodvs49ktd087fg.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.teachcode",
+            "certificate_hash": "cf511cae8d42bd358d62712171f3c708e691af9a"
+          }
+        },
+        {
+          "client_id": "847433455353-gc2chsum69m5hd6a0r29huild70afghh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBXXQUQ0naGUxD61wydAnbYWTutquVePQE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "847433455353-gc2chsum69m5hd6a0r29huild70afghh.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
