@@ -1,11 +1,9 @@
 package com.example.teachcode;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
-import android.os.Build;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -19,34 +17,34 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-
-import java.util.Objects;
+import com.google.firebase.auth.FirebaseUser;
 
 public class Register extends AppCompatActivity {
-    EditText mFullName, mEmail, mPassword, mPhone;
+    EditText mfullNameRegEditText, memailRegEditText, mpasswordRegEditText, mphoneRegEditText;
     Button mRegisterBtn;
-    TextView mLoginBtn;
+    TextView mcreateRegText;
     FirebaseAuth firebaseAuth;  // provide by firebase
-    ProgressBar progressBar;
+    ProgressBar progressRegBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
-        mFullName = findViewById(R.id.fullNameText);
-        mEmail = findViewById(R.id.emailText);
-        mPassword = findViewById(R.id.passwordText);
-        mPhone = findViewById(R.id.phoneText);
+        mfullNameRegEditText = findViewById(R.id.fullNameRegEditText);
+        memailRegEditText = findViewById(R.id.emailRegEditText);
+        mpasswordRegEditText = findViewById(R.id.passwordRegEditText);
+        mphoneRegEditText = findViewById(R.id.phoneRegEditText);
         mRegisterBtn = findViewById(R.id.registerBtn);
-        mRegisterBtn = findViewById(R.id.registerBtn);
-        mLoginBtn = findViewById(R.id.createText);
+        mcreateRegText = findViewById(R.id.createRegText);
 
         firebaseAuth = FirebaseAuth.getInstance();
-        progressBar = findViewById(R.id.progressBar);
+        progressRegBar = findViewById(R.id.progressRegBar);
+
 
         // user already has an account
-        if (firebaseAuth.getCurrentUser() != null) {
+        FirebaseUser currentUser = firebaseAuth.getCurrentUser();
+        if (currentUser != null) {
             // direct to main activity
             startActivity(new Intent(getApplicationContext(), MainActivity.class));
             finish();
@@ -56,46 +54,55 @@ public class Register extends AppCompatActivity {
         mRegisterBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String email = mEmail.getEditableText().toString().trim();
-                String password = mPassword.getText().toString().trim();
+                String email = memailRegEditText.getText().toString().trim();
+                String password = mpasswordRegEditText.getText().toString().trim();
 
                 // if email or password is empty
                 if (TextUtils.isEmpty(email)) {
-                    mEmail.setError("Email is required.");
+                    memailRegEditText.setError("Email is required.");
                     return;
                 }
                 if (TextUtils.isEmpty(password)) {
-                    mPassword.setError("Password is required.");
+                    mpasswordRegEditText.setError("Password is required.");
                     return;
                 }
 
                 // password length must be greater than 6
                 if (password.length() < 6) {
-                    mPassword.setError("Password must at least 6 characters.");
+                    mpasswordRegEditText.setError("Password must at least 6 characters.");
                     return;
                 }
 
-                progressBar.setVisibility(View.VISIBLE);
+                progressRegBar.setVisibility(View.VISIBLE);
 
                 // register the user in firebase
-                firebaseAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        // if task is successful -> we success create user
-                        if (task.isSuccessful()) {
-                            Toast.makeText(Register.this, "User successfully created.", Toast.LENGTH_SHORT).show();
-                            // direct to main activity
-                            startActivity(new Intent(getApplicationContext(), MainActivity.class));
-                        } else {
-                            Toast.makeText(Register.this, "Error. " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
-                        }
-                    }
-                });
-
-
+                firebaseAuth.createUserWithEmailAndPassword(email, password)
+                        .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                            @Override
+                            public void onComplete(@NonNull Task<AuthResult> task) {
+                                // if task is successful -> we success create user
+                                if (task.isSuccessful()) {
+                                    Toast.makeText(Register.this, "User successfully created.", Toast.LENGTH_SHORT).show();
+                                    progressRegBar.setVisibility(View.VISIBLE);
+                                    // direct to main activity
+                                    startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                                } else {
+                                    Toast.makeText(Register.this, "Error. Register new user failed." + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                                    progressRegBar.setVisibility(View.GONE);
+                                }
+                            }
+                        });
             }
         });
 
+        // already a user option. go straight to login
+        mcreateRegText.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                progressRegBar.setVisibility(View.VISIBLE);
+                startActivity(new Intent(getApplicationContext(), Login.class));
+            }
+        });
 
     }
 }

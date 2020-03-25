@@ -8,167 +8,165 @@
     tools:context=".Register">
 
     <TextView
-        android:id="@+id/appTitle"
+        android:id="@+id/appRegTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/teach_code"
         android:textColor="#F7F2F2"
         android:textSize="30sp"
         app:fontFamily="monospace"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.054" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/loginText"
-        android:layout_width="225dp"
-        android:layout_height="28dp"
-        android:layout_marginStart="120dp"
-        android:layout_marginLeft="120dp"
-        android:layout_marginTop="40dp"
+        android:id="@+id/loginRegText"
+        android:layout_width="301dp"
+        android:layout_height="32dp"
         android:text="@string/create_new_account"
         android:textColor="@android:color/background_light"
         android:textSize="18sp"
         app:fontFamily="monospace"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/appTitle" />
+        app:layout_constraintTop_toBottomOf="@+id/appRegTitle" />
 
     <EditText
-        android:id="@+id/fullNameText"
+        android:id="@+id/fullNameRegEditText"
         android:layout_width="276dp"
         android:layout_height="51dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
         android:ems="10"
+        android:importantForAutofill="no"
         android:inputType="textPersonName"
         android:padding="10dp"
-        android:text="@string/full_name"
         android:textColor="@android:color/background_light"
         android:textSize="14sp"
         app:fontFamily="monospace"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.504"
+        app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/loginText"
-        app:layout_constraintVertical_bias="0.092"
-        android:importantForAutofill="no" />
+        app:layout_constraintTop_toBottomOf="@+id/fullNameRegView" />
 
     <EditText
-        android:id="@+id/emailText"
+        android:id="@+id/emailRegEditText"
         android:layout_width="276dp"
         android:layout_height="51dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="2dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
         android:ems="10"
+        android:importantForAutofill="no"
         android:inputType="textEmailAddress"
         android:padding="10dp"
-        android:text="@string/email"
         android:textColor="@android:color/background_light"
         android:textSize="14sp"
         app:fontFamily="monospace"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/fullNameText"
-        app:layout_constraintVertical_bias="0.0"
-        android:importantForAutofill="no" />
+        app:layout_constraintTop_toBottomOf="@+id/emailRegView" />
 
     <EditText
-        android:id="@+id/passwordText"
+        android:id="@+id/passwordRegEditText"
         android:layout_width="276dp"
         android:layout_height="51dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="2dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
         android:ems="10"
+        android:importantForAutofill="no"
         android:inputType="textPassword"
         android:padding="10dp"
-        android:text="@string/password"
         android:textColor="@android:color/background_light"
         android:textSize="14sp"
         app:fontFamily="monospace"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/emailText"
-        app:layout_constraintVertical_bias="0.0"
-        android:importantForAutofill="no" />
+        app:layout_constraintTop_toBottomOf="@+id/passwordRegView" />
 
     <EditText
-        android:id="@+id/phoneText"
+        android:id="@+id/phoneRegEditText"
         android:layout_width="276dp"
         android:layout_height="51dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="2dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
         android:ems="10"
+        android:importantForAutofill="no"
         android:inputType="phone"
         android:padding="10dp"
-        android:text="@string/phone"
         android:textColor="@android:color/background_light"
         android:textSize="14sp"
         app:fontFamily="monospace"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/passwordText"
-        app:layout_constraintVertical_bias="0.0"
-        android:importantForAutofill="no" />
+        app:layout_constraintTop_toBottomOf="@+id/phoneRegView" />
 
     <Button
         android:id="@+id/registerBtn"
         android:layout_width="194dp"
         android:layout_height="67dp"
         android:text="@string/register"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/phoneText"
-        app:layout_constraintVertical_bias="0.067" />
+        app:layout_constraintTop_toBottomOf="@+id/phoneRegEditText" />
 
     <TextView
-        android:id="@+id/createText"
+        android:id="@+id/createRegText"
         android:layout_width="205dp"
         android:layout_height="38dp"
-        android:layout_marginStart="92dp"
-        android:layout_marginLeft="92dp"
         android:text="@string/already_a_user"
         android:textColor="@android:color/background_light"
         android:textSize="18sp"
         app:fontFamily="monospace"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.303"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/registerBtn"
-        app:layout_constraintVertical_bias="0.146" />
+        app:layout_constraintTop_toBottomOf="@+id/registerBtn" />
 
     <ProgressBar
-        android:id="@+id/progressBar"
-        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        android:id="@+id/progressRegBar"
+        style="@android:style/Widget.DeviceDefault.Light.ProgressBar"
         android:layout_width="74dp"
         android:layout_height="64dp"
-        android:layout_margin="10dp"
         android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/createText" />
+        app:layout_constraintTop_toBottomOf="@+id/createRegText" />
+
+    <TextView
+        android:id="@+id/fullNameRegView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/full_name"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/loginRegText" />
+
+    <TextView
+        android:id="@+id/emailRegView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/email_register"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fullNameRegEditText" />
+
+    <TextView
+        android:id="@+id/passwordRegView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/password_register"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/emailRegEditText" />
+
+    <TextView
+        android:id="@+id/phoneRegView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/phone"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/passwordRegEditText" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

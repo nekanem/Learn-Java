@@ -2,14 +2,18 @@
     <string name="app_name">TeachCode</string>
     <string name="teach_code"><![CDATA[Teach Code >]]></string>
     <string name="create_new_account">Create New Account</string>
-    <string name="full_name">Full name:</string>
     <string name="email">Email:</string>
     <string name="name">Name</string>
     <string name="password">Password:</string>
     <string name="already_registered">Already Registered</string>
     <string name="register">Register</string>
-    <string name="already_a_user">Already a user</string>
     <string name="phone">Phone:</string>
     <string name="logout">Logout</string>
     <string name="login">Login</string>
+    <string name="already_a_user">Already A User?</string>
+    <string name="full_name">Full Name:</string>
+    <string name="login_as_existing_user">Login as Existing User</string>
+    <string name="create_new_account_register">Create New Account Register</string>
+    <string name="email_register">Email Register</string>
+    <string name="password_register">Password Register</string>
 </resources>
