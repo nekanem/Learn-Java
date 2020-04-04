@@ -44,7 +44,7 @@ public class RegisterTest extends Register {
 
     @Test
     public void test() {
-        Looper.prepare();
+        Looper.prepare(); // rid of
         launchActivityWithIntent();
         Espresso.onView(withId(R.id.registerBtn)).perform(click());
     }
@@ -77,7 +77,7 @@ public class RegisterTest extends Register {
     @Test
     public void test4() {
         Looper.prepare();
-        launchActivityWithIntent();
+        launchActivityWithIntent(); // not need
         //test 4 - invalid email input
         Espresso.onView(withId(R.id.emailRegEditText)).perform(typeText("jimmyjohnsongmail.com"));
         Espresso.onView(withId(R.id.emailRegEditText)).perform(typeText("jimmyjohnson@gmailcom"));

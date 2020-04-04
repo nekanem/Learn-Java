@@ -23,11 +23,13 @@
         android:id="@+id/loginRegText"
         android:layout_width="301dp"
         android:layout_height="32dp"
+        android:layout_marginTop="24dp"
         android:text="@string/create_new_account"
         android:textColor="@android:color/background_light"
-        android:textSize="18sp"
+        android:textSize="19sp"
         app:fontFamily="monospace"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.89"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/appRegTitle" />
 
@@ -96,8 +98,10 @@
         android:id="@+id/registerBtn"
         android:layout_width="194dp"
         android:layout_height="67dp"
+        android:layout_marginTop="16dp"
         android:text="@string/register"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/phoneRegEditText" />
 
@@ -105,11 +109,13 @@
         android:id="@+id/createRegText"
         android:layout_width="205dp"
         android:layout_height="38dp"
-        android:text="@string/already_a_user"
+        android:layout_marginTop="16dp"
+        android:text="@string/sign_in"
         android:textColor="@android:color/background_light"
         android:textSize="18sp"
         app:fontFamily="monospace"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.815"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/registerBtn" />
 
@@ -121,17 +127,21 @@
         android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/createRegText" />
+        app:layout_constraintTop_toBottomOf="@+id/createRegText"
+        app:layout_constraintVertical_bias="0.153" />
 
     <TextView
         android:id="@+id/fullNameRegView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
         android:text="@string/full_name"
         android:textColor="#FFFFFF"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.208"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/loginRegText" />
 
@@ -139,11 +149,11 @@
         android:id="@+id/emailRegView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/email_register"
+        android:text="@string/email"
         android:textColor="#FFFFFF"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.187"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/fullNameRegEditText" />
 
@@ -151,10 +161,11 @@
         android:id="@+id/passwordRegView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/password_register"
+        android:text="@string/password"
         android:textColor="#FFFFFF"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.207"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/emailRegEditText" />
 
@@ -166,6 +177,7 @@
         android:textColor="#FFFFFF"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.19"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/passwordRegEditText" />
 

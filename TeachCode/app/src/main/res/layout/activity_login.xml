@@ -23,11 +23,13 @@
         android:id="@+id/createUserLogText"
         android:layout_width="259dp"
         android:layout_height="21dp"
-        android:text="@string/login_as_existing_user"
+        android:layout_marginTop="24dp"
+        android:text="@string/create_new_account"
         android:textColor="@android:color/background_light"
         android:textSize="18sp"
         app:fontFamily="monospace"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.644"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/loginBtn" />
 
@@ -62,14 +64,16 @@
         app:layout_constraintTop_toBottomOf="@+id/passwordLogView" />
 
     <TextView
-        android:id="@+id/createLogText"
-        android:layout_width="205dp"
-        android:layout_height="38dp"
-        android:text="@string/create_new_account"
+        android:id="@+id/signInLogText"
+        android:layout_width="147dp"
+        android:layout_height="31dp"
+        android:layout_marginTop="24dp"
+        android:text="@string/sign_in"
         android:textColor="@android:color/background_light"
-        android:textSize="18sp"
+        android:textSize="20sp"
         app:fontFamily="monospace"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.571"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/appLogTitle" />
 
@@ -77,12 +81,14 @@
         android:id="@+id/emailLogView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
         android:text="@string/email"
         android:textColor="#FFFFFF"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.187"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/createLogText" />
+        app:layout_constraintTop_toBottomOf="@+id/signInLogText" />
 
     <TextView
         android:id="@+id/passwordLogView"
@@ -92,6 +98,7 @@
         android:textColor="#FFFFFF"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.207"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/emailLogText" />
 
@@ -99,8 +106,10 @@
         android:id="@+id/loginBtn"
         android:layout_width="102dp"
         android:layout_height="57dp"
+        android:layout_marginTop="36dp"
         android:text="@string/login"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/passwordLogText" />
 
@@ -109,11 +118,25 @@
         style="@android:style/Widget.DeviceDefault.Light.ProgressBar"
         android:layout_width="74dp"
         android:layout_height="64dp"
-        android:layout_marginBottom="332dp"
+        android:layout_marginBottom="100dp"
         android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.516"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/forgetPassword" />
+
+    <TextView
+        android:id="@+id/forgetPassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:fontFamily="monospace"
+        android:text="Forget Password"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.39"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/createUserLogText" />
 

@@ -16,4 +16,5 @@
     <string name="create_new_account_register">Create New Account Register</string>
     <string name="email_register">Email Register</string>
     <string name="password_register">Password Register</string>
+    <string name="sign_in">Sign In</string>
 </resources>
