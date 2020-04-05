@@ -20,7 +20,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/createUserLogText"
+        android:id="@+id/createUserLogTeacherText"
         android:layout_width="259dp"
         android:layout_height="21dp"
         android:layout_marginTop="24dp"
@@ -122,9 +122,10 @@
         android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.456"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/forgetPassword" />
+        app:layout_constraintTop_toBottomOf="@+id/forgetPassword"
+        app:layout_constraintVertical_bias="1.0" />
 
     <TextView
         android:id="@+id/forgetPassword"
@@ -138,6 +139,19 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.39"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/createUserLogText" />
+        app:layout_constraintTop_toBottomOf="@+id/createUserLogTeacherText" />
+
+    <TextView
+        android:id="@+id/teacherLogSignIn"
+        android:layout_width="160dp"
+        android:layout_height="29dp"
+        android:layout_marginTop="16dp"
+        android:text="Login As A Teacher"
+        android:textColor="#F3EEEE"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.39"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/forgetPassword" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

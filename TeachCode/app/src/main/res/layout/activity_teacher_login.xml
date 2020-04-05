@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/wallpaper"
+    tools:context=".TeacherLogin">
+
+
+    <ProgressBar
+        android:id="@+id/progressLogBar2"
+        style="@android:style/Widget.DeviceDefault.Light.ProgressBar"
+        android:layout_width="74dp"
+        android:layout_height="64dp"
+        android:layout_marginBottom="68dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.433"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/studentLogSignIn"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/studentLogSignIn"
+        android:layout_width="165dp"
+        android:layout_height="29dp"
+        android:layout_marginTop="12dp"
+        android:text="Login As Student"
+        android:textColor="#F3EEEE"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/progressLogBar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.365"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/forgetPasswordTeacher" />
+
+    <TextView
+        android:id="@+id/forgetPasswordTeacher"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:fontFamily="monospace"
+        android:text="Forget Password"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.358"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/createUserLogTeacherText" />
+
+    <TextView
+        android:id="@+id/createUserLogTeacherText"
+        android:layout_width="259dp"
+        android:layout_height="21dp"
+        android:layout_marginTop="32dp"
+        android:text="@string/create_new_account"
+        android:textColor="@android:color/background_light"
+        android:textSize="18sp"
+        app:fontFamily="monospace"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.592"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/loginTeacherBtn" />
+
+    <Button
+        android:id="@+id/loginTeacherBtn"
+        android:layout_width="102dp"
+        android:layout_height="57dp"
+        android:layout_marginTop="32dp"
+        android:text="@string/login"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/passwordLogTeacherText" />
+
+    <EditText
+        android:id="@+id/passwordLogTeacherText"
+        android:layout_width="276dp"
+        android:layout_height="51dp"
+        android:ems="10"
+        android:importantForAutofill="no"
+        android:inputType="textPassword"
+        android:padding="10dp"
+        android:textColor="@android:color/background_light"
+        android:textSize="14sp"
+        app:fontFamily="monospace"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.666"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/passwordLogTeacherView" />
+
+    <TextView
+        android:id="@+id/passwordLogTeacherView"
+        android:layout_width="86dp"
+        android:layout_height="19dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/password"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.276"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/emailLogTeacherText" />
+
+    <EditText
+        android:id="@+id/emailLogTeacherText"
+        android:layout_width="276dp"
+        android:layout_height="51dp"
+        android:autofillHints=""
+        android:ems="10"
+        android:inputType="textEmailAddress"
+        android:padding="10dp"
+        android:textColor="@android:color/background_light"
+        android:textSize="14sp"
+        app:fontFamily="monospace"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.666"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/emailLogTeacherView" />
+
+    <TextView
+        android:id="@+id/emailLogTeacherView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="56dp"
+        android:text="@string/email"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.247"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/signInLogTeacherText" />
+
+    <TextView
+        android:id="@+id/signInLogTeacherText"
+        android:layout_width="248dp"
+        android:layout_height="29dp"
+        android:layout_marginTop="44dp"
+        android:text="Sign In As A Teacher"
+        android:textColor="@android:color/background_light"
+        android:textSize="20sp"
+        app:fontFamily="monospace"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.552"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/appLogTitle2" />
+
+    <TextView
+        android:id="@+id/appLogTitle2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="@string/teach_code"
+        android:textColor="#F7F2F2"
+        android:textSize="30sp"
+        app:fontFamily="monospace"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

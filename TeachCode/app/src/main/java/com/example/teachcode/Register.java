@@ -2,6 +2,7 @@ package com.example.teachcode;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+
 import io.opencensus.tags.Tag;
 
 import android.content.Intent;
@@ -10,6 +11,7 @@ import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -37,6 +39,7 @@ public class Register extends AppCompatActivity {
     ProgressBar progressRegBar;
     FirebaseFirestore firestore;
     String userID;
+    CheckBox mcheckBoxStudent, mcheckBoxTeacher;
     private static final String TAG = "Register";
 
     @Override
@@ -50,6 +53,8 @@ public class Register extends AppCompatActivity {
         mphoneRegEditText = findViewById(R.id.phoneRegEditText);
         mRegisterBtn = findViewById(R.id.registerBtn);
         mcreateRegText = findViewById(R.id.createRegText);
+        mcheckBoxStudent = findViewById(R.id.checkBoxStudent);
+        mcheckBoxTeacher = findViewById(R.id.checkBoxTeacher);
 
         // instantiate the fire base stuff
         firebaseAuth = FirebaseAuth.getInstance();
@@ -73,6 +78,8 @@ public class Register extends AppCompatActivity {
                 String password = mpasswordRegEditText.getText().toString().trim();
                 final String fullName = mfullNameRegEditText.getText().toString();
                 final String phone = mphoneRegEditText.getText().toString();
+                final boolean studentUser = mcheckBoxStudent.isChecked();
+                final boolean teacherUser = mcheckBoxTeacher.isChecked();
 
                 // if email or password is empty
                 if (TextUtils.isEmpty(email)) {
@@ -88,58 +95,93 @@ public class Register extends AppCompatActivity {
                     mpasswordRegEditText.setError("Password must at least 6 characters.");
                     return;
                 }
+
+                if (studentUser && teacherUser) {
+                    Toast.makeText(Register.this, "Please select only one role", Toast.LENGTH_LONG).show();
+                    return;
+                }
+                if (!studentUser && !teacherUser) {
+                    Toast.makeText(Register.this, "Please select only one role", Toast.LENGTH_LONG).show();
+                    return;
+                }
                 progressRegBar.setVisibility(View.VISIBLE);
 
                 // register the user in firebase
                 firebaseAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                            @Override
-                            public void onComplete(@NonNull Task<AuthResult> task) {
-                                // if task is successful -> we success create a user
-                                if (task.isSuccessful()) {
-                                    // verify email sending link
-                                    FirebaseUser firebaseUser = firebaseAuth.getCurrentUser();
-                                    firebaseUser.sendEmailVerification().addOnSuccessListener(new OnSuccessListener<Void>() {
-                                        @Override
-                                        public void onSuccess(Void aVoid) {
-                                            Toast.makeText(Register.this, "Verification link has been sent to your email.", Toast.LENGTH_SHORT).show();
-                                        }
-                                    }).addOnFailureListener(new OnFailureListener() {
-                                        @Override
-                                        public void onFailure(@NonNull Exception e) {
-                                            Log.d(TAG, "sendEmailVerification - onFailure: failed sending verify link. " + e.toString());
-                                        }
-                                    });
-                                    Toast.makeText(Register.this, "User successfully created.", Toast.LENGTH_SHORT).show();
-
-                                    // store user's data into fire store database
-                                    userID = firebaseAuth.getCurrentUser().getUid();
-                                    DocumentReference documentReference = firestore.collection("users").document(userID);
-                                    Map<String, Object> userDB = new HashMap<>();
-                                    userDB.put("fullName", fullName);
-                                    userDB.put("email", email);
-                                    userDB.put("phone", phone);
-
-                                    documentReference.set(userDB).addOnSuccessListener(new OnSuccessListener<Void>() {
-                                        @Override
-                                        public void onSuccess(Void aVoid) {
-                                            Log.d(TAG, "documentRef - onSuccess: user Profile is created for " + userID);
-                                        }
-                                    }).addOnFailureListener(new OnFailureListener() {
-                                        @Override
-                                        public void onFailure(@NonNull Exception e) {
-                                            Log.d(TAG, "documentRef - onFailure: failed creating profile " + e.toString());
-                                        }
-                                    });
-
-                                    // direct to main activity
-                                    progressRegBar.setVisibility(View.VISIBLE);
-                                    startActivity(new Intent(getApplicationContext(), MainActivity.class));
-                                } else {
-                                    Toast.makeText(Register.this, "Error. Register new user failed." + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
-                                    progressRegBar.setVisibility(View.GONE);
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        // if task is successful -> we success create a user
+                        if (task.isSuccessful()) {
+                            // verify email sending link
+                            FirebaseUser firebaseUser = firebaseAuth.getCurrentUser();
+                            firebaseUser.sendEmailVerification().addOnSuccessListener(new OnSuccessListener<Void>() {
+                                @Override
+                                public void onSuccess(Void aVoid) {
+                                    Toast.makeText(Register.this, "Verification link has been sent to your email.", Toast.LENGTH_SHORT).show();
                                 }
+                            }).addOnFailureListener(new OnFailureListener() {
+                                @Override
+                                public void onFailure(@NonNull Exception e) {
+                                    Log.d(TAG, "sendEmailVerification - onFailure: failed sending verify link. " + e.toString());
+                                }
+                            });
+                            Toast.makeText(Register.this, "User successfully created.", Toast.LENGTH_SHORT).show();
+
+                            if (studentUser) {
+                                // store user's data into fire store database
+                                userID = firebaseAuth.getCurrentUser().getUid();
+                                DocumentReference documentReference = firestore.collection("users").document(userID);
+                                Map<String, Object> studentDB = new HashMap<>();
+
+                                studentDB.put("fullName", fullName);
+                                studentDB.put("email", email);
+                                studentDB.put("phone", phone);
+
+                                documentReference.set(studentDB).addOnSuccessListener(new OnSuccessListener<Void>() {
+                                    @Override
+                                    public void onSuccess(Void aVoid) {
+                                        Log.d(TAG, "documentRef - onSuccess: user Profile is created for " + userID);
+                                    }
+                                }).addOnFailureListener(new OnFailureListener() {
+                                    @Override
+                                    public void onFailure(@NonNull Exception e) {
+                                        Log.d(TAG, "documentRef - onFailure: failed creating profile " + e.toString());
+                                    }
+                                });
+                            } else if (teacherUser) {
+                                // store user's data into fire store database
+                                userID = firebaseAuth.getCurrentUser().getUid();
+                                DocumentReference documentReference = firestore.collection("teachers").document(userID);
+                                Map<String, Object> teacherDB = new HashMap<>();
+
+                                teacherDB.put("fullName", fullName);
+                                teacherDB.put("email", email);
+                                teacherDB.put("phone", phone);
+
+                                documentReference.set(teacherDB).addOnSuccessListener(new OnSuccessListener<Void>() {
+                                    @Override
+                                    public void onSuccess(Void aVoid) {
+                                        Log.d(TAG, "documentRef - onSuccess: user Profile is created for " + userID);
+                                    }
+                                }).addOnFailureListener(new OnFailureListener() {
+                                    @Override
+                                    public void onFailure(@NonNull Exception e) {
+                                        Log.d(TAG, "documentRef - onFailure: failed creating profile " + e.toString());
+                                    }
+                                });
+
                             }
-                        });
+
+
+                            // direct to main activity
+                            progressRegBar.setVisibility(View.VISIBLE);
+                            startActivity(new Intent(getApplicationContext(), Login.class));
+                        } else {
+                            Toast.makeText(Register.this, "Error. Register new user failed." + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                            progressRegBar.setVisibility(View.GONE);
+                        }
+                    }
+                });
             }
         });
 
