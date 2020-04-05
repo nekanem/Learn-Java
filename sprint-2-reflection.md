@@ -19,5 +19,5 @@
 ## Team Reflection:
 * Pedram had worked on home page, Nate worked on lessons, Vy worked on login ,while Paul had worked on testing. 
 * What worked 
-* What we can carry over to sprint 3 is starting early as possible, as starting early would operations more soother than they already are. Issues came up during break when the situation made it a bit more challenging to focus 
+* What we can carry over to sprint 3 is starting as early as possible, as starting early would operations more soother than they already are. Issues came up during break when the situation made it a bit more challenging to focus 
 
