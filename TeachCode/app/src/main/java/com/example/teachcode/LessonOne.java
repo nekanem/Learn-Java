@@ -34,27 +34,27 @@ public class LessonOne extends AppCompatActivity {
         }
 
 
-//        if(id == R.id.action_settings){
-//
-//            Intent profileIntent = new Intent (MainActivity.this, UserProfile.class)
-//            startActivity(profileIntent);
-//
-//
-//        }
-//
+        if(id == R.id.action_settings){
+
+            Intent profileIntent = new Intent (LessonOne.this, Setting.class);
+            startActivity(profileIntent);
+
+
+        }
+
         if(id == R.id.action_home){
 
             Intent homeIntent = new Intent (LessonOne.this, MainActivity.class);
             startActivity(homeIntent);
 
         }
-//
-//        if(id == R.id.action_progress){
-//
-//            Intent profileIntent = new Intent (MainActivity.this, UserProfile.class)
-//            startActivity(profileIntent);
-//
-//        }
+
+        if(id == R.id.action_progress){
+
+            Intent profileIntent = new Intent (LessonOne.this, Progress.class);
+            startActivity(profileIntent);
+
+        }
 
 
         return super.onOptionsItemSelected(item);

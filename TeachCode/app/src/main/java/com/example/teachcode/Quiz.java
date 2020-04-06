@@ -33,27 +33,27 @@ public class Quiz extends AppCompatActivity {
         }
 
 
-//        if(id == R.id.action_settings){
-//
-//            Intent profileIntent = new Intent (MainActivity.this, UserProfile.class)
-//            startActivity(profileIntent);
-//
-//
-//        }
-//
+        if(id == R.id.action_settings){
+
+            Intent profileIntent = new Intent (Quiz.this, Setting.class);
+            startActivity(profileIntent);
+
+
+        }
+
         if(id == R.id.action_home){
 
             Intent homeIntent = new Intent (Quiz.this, MainActivity.class);
             startActivity(homeIntent);
 
         }
-//
-//        if(id == R.id.action_progress){
-//
-//            Intent profileIntent = new Intent (MainActivity.this, UserProfile.class)
-//            startActivity(profileIntent);
-//
-//        }
+
+        if(id == R.id.action_progress){
+
+            Intent profileIntent = new Intent (Quiz.this, UserProfile.class);
+            startActivity(profileIntent);
+
+        }
 
 
         return super.onOptionsItemSelected(item);

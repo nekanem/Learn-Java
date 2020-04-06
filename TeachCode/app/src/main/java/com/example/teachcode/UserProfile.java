@@ -23,6 +23,7 @@ import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
+import com.google.firebase.firestore.auth.User;
 
 public class UserProfile extends AppCompatActivity {
 
@@ -109,27 +110,22 @@ public class UserProfile extends AppCompatActivity {
             startActivity(sameIntent);
         }
 
-//        if(id == R.id.action_settings){
-//
-//            Intent profileIntent = new Intent (MainActivity.this, UserProfile.class)
-//            startActivity(profileIntent);
-//
-//
-//        }
-//
-//        if(id == R.id.action_home){
-//
-//            Intent profileIntent = new Intent (MainActivity.this, UserProfile.class)
-//            startActivity(profileIntent);
-//
-//        }
-//
-//        if(id == R.id.action_progress){
-//
-//            Intent profileIntent = new Intent (MainActivity.this, UserProfile.class)
-//            startActivity(profileIntent);
-//
-//        }
+        if(id == R.id.action_settings){
+
+            Intent profileIntent = new Intent (UserProfile.this, Setting.class);
+            startActivity(profileIntent);
+
+
+        }
+
+
+
+        if(id == R.id.action_progress){
+
+            Intent profileIntent = new Intent (UserProfile.this, Progress.class);
+            startActivity(profileIntent);
+
+        }
 
 
         return super.onOptionsItemSelected(item);
