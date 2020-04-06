@@ -31,6 +31,10 @@ import static org.junit.Assert.assertTrue;
 @LargeTest
 public class LoginTest {
 
+    String registerToast =  "Verification link has been sent to your email.";
+
+
+
     @Rule
     public ActivityTestRule<Login> mActivityRule = new ActivityTestRule<>(Login.class);
 

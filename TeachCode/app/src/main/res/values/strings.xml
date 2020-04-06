@@ -17,4 +17,10 @@
     <string name="email_register">Email Register</string>
     <string name="password_register">Password Register</string>
     <string name="sign_in">Sign In</string>
+    <string name="your_profile" />
+    <string name="your_name">Your Name:</string>
+    <string name="to_do">To do</string>
+    <string name="email_not_verify">EMAIL NOT VERIFY</string>
+    <string name="your_email">Your email</string>
+    <string name="teachcode">TeachCode</string>
 </resources>
