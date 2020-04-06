@@ -31,7 +31,6 @@ import static org.junit.Assert.assertTrue;
 @LargeTest
 public class LoginTest {
 
-    String registerToast =  "Verification link has been sent to your email.";
 
 
 
@@ -43,8 +42,7 @@ public class LoginTest {
     //tests basic functioning of buttons
     @Test
     public void test() {
-        //Looper.prepare();
-        // launchActivityWithIntent();
+
         Espresso.onView(withId(R.id.loginBtn)).perform(click());
         //Espresso.onView(withId(R.id.createUserLogText)).perform(click());
     }
@@ -52,8 +50,6 @@ public class LoginTest {
     //testing unregistered student email
     @Test
     public void test1() throws InterruptedException {
-        //Looper.prepare();
-        // launchActivityWithIntent();
         Espresso.onView(withId(R.id.emailLogText)).perform(typeText("invalid@gmail.com"));
         Espresso.onView(withId(R.id.passwordLogText)).perform(typeText("qwerty"));
         Espresso.onView(withId(R.id.passwordLogText)).perform(closeSoftKeyboard());
@@ -64,15 +60,13 @@ public class LoginTest {
     //testing unregistered teacher email
     @Test
     public void test2() {
-        //Looper.prepare();
-        // launchActivityWithIntent();
         Espresso.onView(withId(R.id.emailLogText)).perform(typeText("dummyemail@gmail.com"));
         Espresso.onView(withId(R.id.passwordLogText)).perform(typeText("wwerftgy"));
         Espresso.onView(withId(R.id.passwordLogText)).perform(closeSoftKeyboard());
         Espresso.onView(withId(R.id.loginBtn)).perform(click());
 
 
-        //Assert.assertTrue();
+
     }
 
 
@@ -80,9 +74,6 @@ public class LoginTest {
     //testing registered student email
     @Test
     public void test3() {
-        //Looper.prepare();
-        // launchActivityWithIntent();
-
         Espresso.onView(withId(R.id.emailLogText)).perform(typeText("paulsingh@gmail.com"));
         Espresso.onView(withId(R.id.passwordLogText)).perform(typeText("qwerty"));
         Espresso.onView(withId(R.id.passwordLogText)).perform(closeSoftKeyboard());
@@ -93,11 +84,8 @@ public class LoginTest {
     //testing registered teacher email
     @Test
     public void test4() {
-        //Looper.prepare();
-        // launchActivityWithIntent();
-
-        //  Espresso.onView(withId(R.id.emailLogText)).perform(typeText("dummyemail@gmail.com"));
-        //  Espresso.onView(withId(R.id.passwordLogText)).perform(typeText("wwerftgy"))
+        Espresso.onView(withId(R.id.emailLogText)).perform(typeText("dummyemail@gmail.com"));
+        Espresso.onView(withId(R.id.passwordLogText)).perform(typeText("wwerftgy"));
         Espresso.onView(withId(R.id.passwordLogText)).perform(closeSoftKeyboard());
         Espresso.onView(withId(R.id.loginBtn)).perform(click());
     }
@@ -105,10 +93,9 @@ public class LoginTest {
     //testing email with invalid character(s)
     @Test
     public void test5() {
-        //Looper.prepare();
-        // launchActivityWithIntent();
+
         Espresso.onView(withId(R.id.emailLogText)).perform(typeText("dummyemail"));
-        //  Espresso.onView(withId(R.id.passwordLogText)).perform(typeText("wwerftgy"));
+          Espresso.onView(withId(R.id.passwordLogText)).perform(typeText("wwerftgy"));
         Espresso.onView(withId(R.id.passwordLogText)).perform(closeSoftKeyboard());
         Espresso.onView(withId(R.id.loginBtn)).perform(click());
     }
@@ -116,10 +103,9 @@ public class LoginTest {
     //testing password with invalid empty email credentials
     @Test
     public void test6() {
-        //Looper.prepare();
-        // launchActivityWithIntent();
+
         Espresso.onView(withId(R.id.emailLogText)).perform(typeText(""));
-        // Espresso.onView(withId(R.id.passwordLogText)).perform(typeText(" "));
+        Espresso.onView(withId(R.id.passwordLogText)).perform(typeText(" "));
         Espresso.onView(withId(R.id.passwordLogText)).perform(closeSoftKeyboard());
         Espresso.onView(withId(R.id.loginBtn)).perform(click());
     }
@@ -127,9 +113,7 @@ public class LoginTest {
     //testing password with invalid password credentials
     @Test
     public void test7() {
-        //Looper.prepare();
-        // launchActivityWithIntent();
-        //   Espresso.onView(withId(R.id.emailLogText)).perform(typeText("dummyemail@gmail.com"));
+        Espresso.onView(withId(R.id.emailLogText)).perform(typeText("dummyemail@gmail.com"));
         Espresso.onView(withId(R.id.passwordLogText)).perform(typeText("werdf"));
         Espresso.onView(withId(R.id.passwordLogText)).perform(closeSoftKeyboard());
         Espresso.onView(withId(R.id.loginBtn)).perform(click());
@@ -138,9 +122,7 @@ public class LoginTest {
     //testing password with invalid password credentials
     @Test
     public void test8() {
-        //Looper.prepare();
-        // launchActivityWithIntent();
-        //   Espresso.onView(withId(R.id.emailLogText)).perform(typeText("dummyemail@gmail.com"));
+        Espresso.onView(withId(R.id.emailLogText)).perform(typeText("dummyemail@gmail.com"));
         Espresso.onView(withId(R.id.passwordLogText)).perform(typeText("qazswedfrtgyhju"));
         Espresso.onView(withId(R.id.passwordLogText)).perform(closeSoftKeyboard());
         Espresso.onView(withId(R.id.loginBtn)).perform(click());
@@ -149,9 +131,7 @@ public class LoginTest {
     //testing password with invalid password credentials
     @Test
     public void test9() {
-        //Looper.prepare();
-        // launchActivityWithIntent();
-        //   Espresso.onView(withId(R.id.emailLogText)).perform(typeText("dummyemail@gmail.com"));
+        Espresso.onView(withId(R.id.emailLogText)).perform(typeText("dummyemail@gmail.com"));
         Espresso.onView(withId(R.id.passwordLogText)).perform(typeText(" "));
         Espresso.onView(withId(R.id.passwordLogText)).perform(closeSoftKeyboard());
         Espresso.onView(withId(R.id.loginBtn)).perform(click());
@@ -160,9 +140,60 @@ public class LoginTest {
     //testing reset password button
     @Test
     public void test10() {
-
         Espresso.onView(withId(R.id.forgetPassword)).perform(click());
+
+
     }
+
+    //testing login with teacher
+    @Test
+    public void test11() {
+
+        Espresso.onView(withId(R.id.emailLogText)).perform(typeText("dummyemail@gmail.com"));
+        Espresso.onView(withId(R.id.passwordLogText)).perform(typeText("qazswedfrtgyhju"));
+        Espresso.onView(withId(R.id.passwordLogText)).perform(closeSoftKeyboard());
+        Espresso.onView(withId(R.id.teacherLogSignIn)).perform(click());
+        // Espresso.onView(withId(R.id.)).perform(click());
+
+    }
+
+    //testing invalid login with teacher
+    @Test
+    public void test12() {
+
+        Espresso.onView(withId(R.id.emailLogText)).perform(typeText("dummyema@gmail.com"));
+        Espresso.onView(withId(R.id.passwordLogText)).perform(typeText("qazswrtgyhju"));
+        Espresso.onView(withId(R.id.passwordLogText)).perform(closeSoftKeyboard());
+        Espresso.onView(withId(R.id.teacherLogSignIn)).perform(click());
+        // Espresso.onView(withId(R.id.)).perform(click());
+
+    }
+
+    //testing teacher login with student information
+    @Test
+    public void test13() {
+
+        Espresso.onView(withId(R.id.emailLogText)).perform(typeText("paulsingh4118@gmail.com"));
+        Espresso.onView(withId(R.id.passwordLogText)).perform(typeText("qwerty"));
+        Espresso.onView(withId(R.id.passwordLogText)).perform(closeSoftKeyboard());
+        Espresso.onView(withId(R.id.teacherLogSignIn)).perform(click());
+        // Espresso.onView(withId(R.id.)).perform(click());
+
+    }
+    //testing student login with teacher information
+    @Test
+    public void test14() {
+
+        Espresso.onView(withId(R.id.emailLogText)).perform(typeText("paulsingh4118@gmail.com"));
+        Espresso.onView(withId(R.id.passwordLogText)).perform(typeText("qwerty"));
+        Espresso.onView(withId(R.id.passwordLogText)).perform(closeSoftKeyboard());
+        Espresso.onView(withId(R.id.loginBtn)).perform(click());
+        // Espresso.onView(withId(R.id.)).perform(click());
+
+    }
+
+
+
 
 
 

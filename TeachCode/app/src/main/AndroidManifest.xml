@@ -9,8 +9,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".TeacherLogin"></activity>
-        <activity android:name=".UserProfile"></activity>
+        <activity android:name=".Quiz"></activity>
+        <activity android:name=".LessonFive" />
+        <activity android:name=".LessonFour" />
+        <activity android:name=".LessonThree" />
+        <activity android:name=".LessonTwo" />
+        <activity android:name=".LessonOne" />
+        <activity android:name=".TeacherLogin" />
+        <activity android:name=".UserProfile" />
         <activity android:name=".Login" />
         <activity android:name=".Register">
             <intent-filter>

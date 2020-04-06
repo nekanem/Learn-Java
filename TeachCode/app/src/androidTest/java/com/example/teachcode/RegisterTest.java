@@ -33,47 +33,12 @@ import static androidx.test.espresso.matcher.ViewMatchers.withText;
 @LargeTest
 public class RegisterTest{
 
-
-
-
     @Rule
     public ActivityTestRule<Register> mActivityRule = new ActivityTestRule<>(Register.class);
 
     private String userName = "test@gmail.com";
     private String passWord = "abcd";
     private String phoneNum = "7571234565";
-
-
-//    @Before
-//    public void setUp() throws Exception {
-//        // Looper.prepare();
-//    }
-
-//    private void createHandler() {
-//        Thread thread = new Thread() {
-//            public void run() {
-//                Looper.prepare();
-//
-//                final Handler handler = new Handler();
-//                handler.postDelayed(new Runnable() {
-//                    @Override
-//                    public void run() {
-//                        // Do Work
-//                        handler.removeCallbacks(this);
-//                        Looper.myLooper().quit();
-//                    }
-//                }, 2000);
-//
-//                Looper.loop();
-//            }
-//        };
-//        thread.start();
-//    }
-
-//    @Override
-//    public Looper getMainLooper() {
-//        return super.getMainLooper();
-//    }
 
     String registerToast =  "Verification link has been sent to your email.";
     @Test
@@ -145,20 +110,20 @@ public class RegisterTest{
         Espresso.onView(withId(R.id.registerBtn)).perform(click());
     }
 
-    @Test
-    public void test7() {
-
-        //test 7 - existing email
-        Espresso.onView(withId(R.id.fullNameRegEditText)).perform(typeText("Jimmy Johnson"));
-        Espresso.onView(withId(R.id.emailRegEditText)).perform(typeText("jimmyjohnson@gmail.com"));
-        Espresso.onView(withId(R.id.passwordRegEditText)).perform(typeText("jimmyjohnjohnson"));
-        Espresso.onView(withId(R.id.passwordRegEditText)).perform(closeSoftKeyboard());
-        Espresso.onView(withId(R.id.phoneRegEditText)).perform(typeText("7577895415"));
-        Espresso.onView(withId(R.id.phoneRegEditText)).perform(closeSoftKeyboard());
-        Espresso.onView(withId(R.id.registerBtn)).perform(click());
-        Espresso.onView(withText("Error. Register new user failed due to duplicate registration ")).inRoot(new ToastMatcher()).check(matches(isDisplayed()));
-
-    }
+//    @Test
+//    public void test7() {
+//
+//        //test 7 - existing email
+//        Espresso.onView(withId(R.id.fullNameRegEditText)).perform(typeText("Jimmy Johnson"));
+//        Espresso.onView(withId(R.id.emailRegEditText)).perform(typeText("jimmyjohnson@gmail.com"));
+//        Espresso.onView(withId(R.id.passwordRegEditText)).perform(typeText("jimmyjohnjohnson"));
+//        Espresso.onView(withId(R.id.passwordRegEditText)).perform(closeSoftKeyboard());
+//        Espresso.onView(withId(R.id.phoneRegEditText)).perform(typeText("7577895415"));
+//        Espresso.onView(withId(R.id.phoneRegEditText)).perform(closeSoftKeyboard());
+//        Espresso.onView(withId(R.id.registerBtn)).perform(click());
+//        Espresso.onView(withText("Error. Register new user failed due to duplicate registration ")).inRoot(new ToastMatcher()).check(matches(isDisplayed()));
+//
+//    }
 
     @Test
     public void test8() {
@@ -201,20 +166,22 @@ public class RegisterTest{
 
     }
 
-    @Test
-    public void test12() {
-        //test 12 - short password
-        Espresso.onView(withId(R.id.fullNameRegEditText)).perform(typeText("Jimy Johnson"));
-        Espresso.onView(withId(R.id.emailRegEditText)).perform(typeText("jimmmmmmmyjohnson@gmail.com"));
-        Espresso.onView(withId(R.id.passwordRegEditText)).perform(typeText("n"));
-        Espresso.onView(withId(R.id.passwordRegEditText)).perform(closeSoftKeyboard());
-        Espresso.onView(withId(R.id.phoneRegEditText)).perform(typeText("7577895415"));
-        Espresso.onView(withId(R.id.phoneRegEditText)).perform(closeSoftKeyboard());
-        Espresso.onView(withId(R.id.registerBtn)).perform(click());
-        Espresso.onView(withText("Password must be greater than 6 characters")).inRoot(new ToastMatcher()).check(matches(isDisplayed()));
-
-
-    }
+//    @Test
+//    public void test12() {
+//        //test 12 - short password
+//        Espresso.onView(withId(R.id.fullNameRegEditText)).perform(typeText("Jimy Johnson"));
+//        Espresso.onView(withId(R.id.emailRegEditText)).perform(typeText("jimmmmmmmyjohnson@gmail.com"));
+//        Espresso.onView(withId(R.id.passwordRegEditText)).perform(typeText("n"));
+//        Espresso.onView(withId(R.id.passwordRegEditText)).perform(closeSoftKeyboard());
+//        Espresso.onView(withId(R.id.phoneRegEditText)).perform(typeText("7577895415"));
+//        Espresso.onView(withId(R.id.phoneRegEditText)).perform(closeSoftKeyboard());
+//        Espresso.onView(withId(R.id.checkBoxStudent)).perform(click());
+//        Espresso.onView(withId(R.id.registerBtn)).perform(click());
+//
+//        Espresso.onView(withText("Password must be greater than 6 characters")).inRoot(new ToastMatcher()).check(matches(isDisplayed()));
+//
+//
+//    }
 
     @Test
     public void test13() {
@@ -223,8 +190,7 @@ public class RegisterTest{
         Espresso.onView(withId(R.id.passwordRegEditText)).perform(closeSoftKeyboard());
         Espresso.onView(withId(R.id.registerBtn)).perform(click());
     }
-    //
-//
+
     @Test
     public void test14() {
         //test 14 - without special characters
@@ -232,8 +198,7 @@ public class RegisterTest{
         Espresso.onView(withId(R.id.passwordRegEditText)).perform(closeSoftKeyboard());
         Espresso.onView(withId(R.id.registerBtn)).perform(click());
     }
-    //
-//
+
     @Test
     public void test15() {
         //test 15 - entering alphanumerica char between 8 - 16 char and special char
@@ -252,11 +217,72 @@ public class RegisterTest{
 
     @Test
     public void test17() {
-        // Looper.prepare();
-        //launchActivityWithIntent();
+
         //test 17 - test enter button
         Espresso.onView(withId(R.id.registerBtn)).perform(click());
     }
+
+    @Test
+    public void test18() {
+        //test 18 - test "Student" option
+        Espresso.onView(withId(R.id.fullNameRegEditText)).perform(typeText("Jimmy Johnson"));
+        Espresso.onView(withId(R.id.emailRegEditText)).perform(typeText("jimmyjohnson@gmail.com"));
+        Espresso.onView(withId(R.id.passwordRegEditText)).perform(typeText("jimyjohnjohnson"));
+        Espresso.onView(withId(R.id.passwordRegEditText)).perform(closeSoftKeyboard());
+        Espresso.onView(withId(R.id.phoneRegEditText)).perform(typeText("7577895415"));
+        Espresso.onView(withId(R.id.phoneRegEditText)).perform(closeSoftKeyboard());
+        Espresso.onView(withId(R.id.registerBtn)).perform(click());
+        Espresso.onView(withId(R.id.checkBoxStudent)).perform(click());
+    }
+
+    @Test
+    public void test19() {
+        //test 19 - tests teacher box
+        Espresso.onView(withId(R.id.fullNameRegEditText)).perform(typeText("Mr.X"));
+        Espresso.onView(withId(R.id.emailRegEditText)).perform(typeText("teachyoself@gmail.com"));
+        Espresso.onView(withId(R.id.passwordRegEditText)).perform(typeText("learningisfun"));
+        Espresso.onView(withId(R.id.passwordRegEditText)).perform(closeSoftKeyboard());
+        Espresso.onView(withId(R.id.phoneRegEditText)).perform(typeText("7575561484"));
+        Espresso.onView(withId(R.id.phoneRegEditText)).perform(closeSoftKeyboard());
+        Espresso.onView(withId(R.id.registerBtn)).perform(click());
+        Espresso.onView(withId(R.id.checkBoxTeacher)).perform(click());
+    }
+
+    @Test
+    public void test20() {
+        //test 20 - tests sign in box
+        Espresso.onView(withId(R.id.createRegText)).perform(click());
+    }
+
+    @Test
+    public void test21() {
+        //test 21 - tests to see if error would pop up if selected both student and teacher
+        Espresso.onView(withId(R.id.fullNameRegEditText)).perform(typeText("Mr.X"));
+        Espresso.onView(withId(R.id.emailRegEditText)).perform(typeText("teachyoself@gmail.com"));
+        Espresso.onView(withId(R.id.passwordRegEditText)).perform(typeText("learningisfun"));
+        Espresso.onView(withId(R.id.passwordRegEditText)).perform(closeSoftKeyboard());
+        Espresso.onView(withId(R.id.phoneRegEditText)).perform(typeText("7575561484"));
+        Espresso.onView(withId(R.id.phoneRegEditText)).perform(closeSoftKeyboard());
+        Espresso.onView(withId(R.id.registerBtn)).perform(click());
+        Espresso.onView(withId(R.id.checkBoxTeacher)).perform(click());
+        Espresso.onView(withId(R.id.checkBoxStudent)).perform(click());
+
+        Espresso.onView(withText("Please select only one role")).inRoot(new ToastMatcher()).check(matches(isDisplayed()));
+    }
+
+    @Test
+    public void test22() {
+        //test 22 - tests to see if error would pop up if selected neither student and teacher
+        Espresso.onView(withId(R.id.fullNameRegEditText)).perform(typeText("Mr.X"));
+        Espresso.onView(withId(R.id.emailRegEditText)).perform(typeText("teachyoself@gmail.com"));
+        Espresso.onView(withId(R.id.passwordRegEditText)).perform(typeText("learningisfun"));
+        Espresso.onView(withId(R.id.passwordRegEditText)).perform(closeSoftKeyboard());
+        Espresso.onView(withId(R.id.phoneRegEditText)).perform(typeText("7575561484"));
+        Espresso.onView(withId(R.id.phoneRegEditText)).perform(closeSoftKeyboard());
+        Espresso.onView(withId(R.id.registerBtn)).perform(click());
+        Espresso.onView(withText("Please select only one role")).inRoot(new ToastMatcher()).check(matches(isDisplayed()));
+    }
+
 
 
 }

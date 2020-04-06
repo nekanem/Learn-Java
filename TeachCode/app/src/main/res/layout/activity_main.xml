@@ -8,6 +8,8 @@
     tools:context=".MainActivity">
 
 
+
+
     <Button
         android:id="@+id/logoutBtn"
         android:layout_width="85dp"
@@ -18,8 +20,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.682" />
-
+        app:layout_constraintVertical_bias="0.888" />
 
     <TextView
         android:id="@+id/teachcode"
@@ -36,8 +37,91 @@
         app:layout_constraintVertical_bias="0.023" />
 
 
+    <TextView
+        android:id="@+id/lessonOne"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="lesson_one"
+        android:text="Lesson 1"
+        android:textColor="@color/common_google_signin_btn_text_dark_default"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/lessonTwo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/teachcode"
+        app:layout_constraintVertical_bias="0.283" />
 
+    <TextView
+        android:id="@+id/lessonTwo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="lesson_two"
+        android:text="Lesson 2"
+        android:textColor="@color/common_google_signin_btn_text_dark_default"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/teachcode"
+        app:layout_constraintVertical_bias="0.199" />
 
+    <TextView
+        android:id="@+id/lessonThree"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="lesson_three"
+        android:text="Lesson 3"
+        android:textColor="@color/common_google_signin_btn_text_dark_default"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/lessonFour"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lessonTwo"
+        app:layout_constraintVertical_bias="0.463" />
+
+    <TextView
+        android:id="@+id/lessonFour"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="lesson_four"
+        android:text="Lesson 4"
+        android:textColor="@color/common_google_signin_btn_text_dark_default"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/lessonFive"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/teachcode"
+        app:layout_constraintVertical_bias="0.897" />
+
+    <TextView
+        android:id="@+id/lessonFive"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="lesson_five"
+        android:text="Lesson 5"
+        android:textColor="@color/common_google_signin_btn_text_dark_default"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/logoutBtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/teachcode"
+        app:layout_constraintVertical_bias="0.763" />
+
+    <TextView
+        android:id="@+id/Quiz"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:onClick="quiz"
+        android:text="Quiz"
+        android:textColor="@color/common_google_signin_btn_text_dark_default"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/logoutBtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lessonFive"
+        app:layout_constraintVertical_bias="0.443"
+        tools:ignore="OnClick" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

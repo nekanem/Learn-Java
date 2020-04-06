@@ -46,9 +46,8 @@ public class MainActivity extends AppCompatActivity {
 
             Intent profileIntent = new Intent (MainActivity.this, UserProfile.class);
             startActivity(profileIntent);
-            //startActivity(new intent(getApplicationContext(), UserProfile.class));
-
         }
+
 
 //        if(id == R.id.action_settings){
 //
@@ -58,12 +57,12 @@ public class MainActivity extends AppCompatActivity {
 //
 //        }
 //
-//        if(id == R.id.action_home){
-//
-//            Intent profileIntent = new Intent (MainActivity.this, UserProfile.class)
-//            startActivity(profileIntent);
-//
-//        }
+        if(id == R.id.action_home){
+
+            Intent homeIntent = new Intent (MainActivity.this, MainActivity.class);
+            startActivity(homeIntent);
+
+        }
 //
 //        if(id == R.id.action_progress){
 //
@@ -79,6 +78,36 @@ public class MainActivity extends AppCompatActivity {
     public void logout(View view) {
         FirebaseAuth.getInstance().signOut(); // user logout
         startActivity(new Intent(getApplicationContext(), Login.class));  // start Login Activity
+        finish();
+    }
+
+    public void lesson_one(View view) {
+        startActivity(new Intent(getApplicationContext(), LessonOne.class));  // start Login Activity
+        finish();
+    }
+
+    public void lesson_two(View view) {
+        startActivity(new Intent(getApplicationContext(), LessonTwo.class));  // start Login Activity
+        finish();
+    }
+
+    public void lesson_three(View view) {
+        startActivity(new Intent(getApplicationContext(), LessonThree.class));  // start Login Activity
+        finish();
+    }
+
+    public void lesson_four(View view) {
+        startActivity(new Intent(getApplicationContext(), LessonFour.class));  // start Login Activity
+        finish();
+    }
+
+    public void lesson_five(View view) {
+        startActivity(new Intent(getApplicationContext(), LessonFive.class));  // start Login Activity
+        finish();
+    }
+
+    public void quiz(View view) {
+        startActivity(new Intent(getApplicationContext(), Quiz.class));  // start Login Activity
         finish();
     }
 }

@@ -23,4 +23,10 @@
     <string name="email_not_verify">EMAIL NOT VERIFY</string>
     <string name="your_email">Your email</string>
     <string name="teachcode">TeachCode</string>
+    <string name="lesson_1">Lesson 1</string>
+    <string name="lesson_2">Lesson 2</string>
+    <string name="lesson_3">Lesson 3</string>
+    <string name="lesson_4">Lesson 4</string>
+    <string name="lesson_5">Lesson 5</string>
+    <string name="quiz">Quiz</string>
 </resources>
