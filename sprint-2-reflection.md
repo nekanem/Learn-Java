@@ -21,3 +21,9 @@
 * What worked 
 * What we can carry over to sprint 3 is starting as early as possible, as starting early would operations more soother than they already are. Issues came up during break when the situation made it a bit more challenging to focus 
 
+## Tests:
+* Testing including entering data that would cause an error and checking to see if the error would be thrown
+* Tests included ensuring all buttons work as they should be
+* Tests if the Toast would display as espected
+* This is a general overview of some of the tests executed.
+
