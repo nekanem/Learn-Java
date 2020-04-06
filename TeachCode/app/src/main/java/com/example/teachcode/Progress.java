@@ -17,55 +17,35 @@ public class Progress extends AppCompatActivity {
         setContentView(R.layout.activity_progress);
     }
 
-
     @Override
-    public boolean onCreateOptionsMenu(Menu menu){
+    public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.options, menu);
         return super.onCreateOptionsMenu(menu);
-
     }
-
-
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         int id = item.getItemId();
 
-        if(id == R.id.action_home){
-
-            Intent profileIntent = new Intent (Progress.this, MainActivity.class);
+        if (id == R.id.action_home) {
+            Intent profileIntent = new Intent(Progress.this, MainActivity.class);
             startActivity(profileIntent);
         }
 
-        if(id == R.id.action_profile){
-
-            Intent sameIntent = new Intent (Progress.this, UserProfile.class);
+        if (id == R.id.action_profile) {
+            Intent sameIntent = new Intent(Progress.this, UserProfile.class);
             startActivity(sameIntent);
         }
 
-        if(id == R.id.action_settings){
-
-            Intent profileIntent = new Intent (Progress.this, Setting.class);
+        if (id == R.id.action_settings) {
+            Intent profileIntent = new Intent(Progress.this, Setting.class);
             startActivity(profileIntent);
-
-
         }
-        if(id == R.id.action_progress){
-
-            Intent profileIntent = new Intent (Progress.this, Progress.class);
+        if (id == R.id.action_progress) {
+            Intent profileIntent = new Intent(Progress.this, Progress.class);
             startActivity(profileIntent);
-
         }
-
 
         return super.onOptionsItemSelected(item);
     }
-
-
-
-
-
-
-
-
 }

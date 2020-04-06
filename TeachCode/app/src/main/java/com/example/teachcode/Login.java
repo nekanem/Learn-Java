@@ -25,7 +25,7 @@ import androidx.appcompat.app.AppCompatActivity;
 public class Login extends AppCompatActivity {
     EditText memailLogText, mpasswordLogText;
     Button mloginBtn;
-    TextView mcreateUserLogText, mforgetPassword , mteacherLogSignIn;
+    TextView mcreateUserLogText, mforgetPassword, mteacherLogSignIn;
     FirebaseAuth firebaseAuth;  // provide by firebase
     ProgressBar mprogressLogBar;
 
@@ -75,10 +75,6 @@ public class Login extends AppCompatActivity {
                         .addOnCompleteListener(new OnCompleteListener<AuthResult>() {  // complete listener is even handler
                             @Override
                             public void onComplete(@NonNull Task<AuthResult> task) {
-
-
-
-
 
                                 // check if log in is successful or not
                                 if (task.isSuccessful()) {
@@ -155,6 +151,5 @@ public class Login extends AppCompatActivity {
                 startActivity(new Intent(getApplicationContext(), TeacherLogin.class));
             }
         });
-
     }
 }

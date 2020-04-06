@@ -15,50 +15,37 @@ public class LessonFive extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lesson_five);
     }
+
     @Override
-    public boolean onCreateOptionsMenu(Menu menu){
+    public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.options, menu);
         return super.onCreateOptionsMenu(menu);
-
     }
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         int id = item.getItemId();
 
-        if(id == R.id.action_profile){
-
-            Intent profileIntent = new Intent (LessonFive.this, UserProfile.class);
+        if (id == R.id.action_profile) {
+            Intent profileIntent = new Intent(LessonFive.this, UserProfile.class);
             startActivity(profileIntent);
         }
 
-
-        if(id == R.id.action_settings){
-
-            Intent profileIntent = new Intent (LessonFive.this, Setting.class);
+        if (id == R.id.action_settings) {
+            Intent profileIntent = new Intent(LessonFive.this, Setting.class);
             startActivity(profileIntent);
-
-
         }
 
-        if(id == R.id.action_home){
-
-            Intent homeIntent = new Intent (LessonFive.this, MainActivity.class);
+        if (id == R.id.action_home) {
+            Intent homeIntent = new Intent(LessonFive.this, MainActivity.class);
             startActivity(homeIntent);
-
         }
 
-        if(id == R.id.action_progress){
-
-            Intent profileIntent = new Intent (LessonFive.this, Progress.class);
+        if (id == R.id.action_progress) {
+            Intent profileIntent = new Intent(LessonFive.this, Progress.class);
             startActivity(profileIntent);
-
         }
-
 
         return super.onOptionsItemSelected(item);
     }
-
-
-
 }

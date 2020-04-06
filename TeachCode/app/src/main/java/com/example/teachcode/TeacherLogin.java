@@ -29,7 +29,7 @@ public class TeacherLogin extends AppCompatActivity {
 
     EditText memailLogTeacherText, mpasswordLogTeacherText;
     Button mloginTeacherBtn;
-    TextView mcreateUserLogTeacherText, mforgetPasswordTeacher , mstudentLogSignIn;
+    TextView mcreateUserLogTeacherText, mforgetPasswordTeacher, mstudentLogSignIn;
     FirebaseAuth firebaseAuth;  // provide by firebase
     ProgressBar mprogressLogBar;
     FirebaseFirestore db;
@@ -53,8 +53,6 @@ public class TeacherLogin extends AppCompatActivity {
 
 
         mloginTeacherBtn.setOnClickListener(new View.OnClickListener() {
-
-
 
 
             @Override

@@ -19,11 +19,8 @@ import static org.junit.Assert.assertTrue;
 @RunWith(AndroidJUnit4.class)
 @LargeTest
 public class MainActivityTest {
-
     @Rule
     public ActivityTestRule<MainActivity> mActivityRule = new ActivityTestRule<>(MainActivity.class);
-
-
 
     //tests basic functioning of buttons
     @Test
@@ -41,6 +38,7 @@ public class MainActivityTest {
     public void test2() {
         Espresso.onView(withId(R.id.lessonTwo)).perform(click());
     }
+
     @Test
     public void test3() {
         Espresso.onView(withId(R.id.lessonThree)).perform(click());
@@ -50,15 +48,14 @@ public class MainActivityTest {
     public void test4() {
         Espresso.onView(withId(R.id.lessonFour)).perform(click());
     }
+
     @Test
     public void test5() {
         Espresso.onView(withId(R.id.lessonFive)).perform(click());
     }
+
     @Test
     public void test6() {
         Espresso.onView(withId(R.id.Quiz)).perform(click());
     }
-
-
-
 }

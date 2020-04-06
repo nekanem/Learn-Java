@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @Override
-    public boolean onCreateOptionsMenu(Menu menu){
+    public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.options, menu);
         return super.onCreateOptionsMenu(menu);
 
@@ -42,35 +42,25 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         int id = item.getItemId();
 
-        if(id == R.id.action_profile){
-
-            Intent profileIntent = new Intent (MainActivity.this, UserProfile.class);
+        if (id == R.id.action_profile) {
+            Intent profileIntent = new Intent(MainActivity.this, UserProfile.class);
             startActivity(profileIntent);
         }
 
-
-        if(id == R.id.action_settings){
-
-            Intent profileIntent = new Intent (MainActivity.this, Setting.class);
+        if (id == R.id.action_settings) {
+            Intent profileIntent = new Intent(MainActivity.this, Setting.class);
             startActivity(profileIntent);
-
-
         }
 
-        if(id == R.id.action_home){
-
-            Intent homeIntent = new Intent (MainActivity.this, MainActivity.class);
+        if (id == R.id.action_home) {
+            Intent homeIntent = new Intent(MainActivity.this, MainActivity.class);
             startActivity(homeIntent);
-
         }
 
-        if(id == R.id.action_progress){
-
-            Intent profileIntent = new Intent (MainActivity.this, Progress.class);
+        if (id == R.id.action_progress) {
+            Intent profileIntent = new Intent(MainActivity.this, Progress.class);
             startActivity(profileIntent);
-
         }
-
 
         return super.onOptionsItemSelected(item);
     }
