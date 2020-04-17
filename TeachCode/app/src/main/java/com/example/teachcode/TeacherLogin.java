@@ -1,20 +1,20 @@
 package com.example.teachcode;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -23,7 +23,10 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.FirebaseFirestoreException;
 
 public class TeacherLogin extends AppCompatActivity {
 
@@ -50,6 +53,9 @@ public class TeacherLogin extends AppCompatActivity {
 
         firebaseAuth = FirebaseAuth.getInstance();
         mprogressLogBar = findViewById(R.id.progressLogBar2);
+
+
+        db = FirebaseFirestore.getInstance();
 
 
         mloginTeacherBtn.setOnClickListener(new View.OnClickListener() {
@@ -92,9 +98,30 @@ public class TeacherLogin extends AppCompatActivity {
                             public void onComplete(@NonNull Task<AuthResult> task) {
                                 // check if log in is successful or not
                                 if (task.isSuccessful()) {
-                                    Toast.makeText(TeacherLogin.this, "Log in successfully.", Toast.LENGTH_SHORT).show();
-                                    mprogressLogBar.setVisibility(View.VISIBLE);
-                                    startActivity(new Intent(getApplicationContext(), MainActivity.class));
+
+                                    userID = firebaseAuth.getCurrentUser().getUid();
+                                    DocumentReference documentReference = db.collection("users").document(userID);
+                                    documentReference.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+
+                                        @Override
+                                        public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                                            DocumentSnapshot document = task.getResult();
+                                            String teacher = document.getString("userType");
+                                            if(teacher.equals("teacher")){
+                                                Toast.makeText(TeacherLogin.this, "Log in successfully as a teacher.", Toast.LENGTH_SHORT).show();
+                                                mprogressLogBar.setVisibility(View.VISIBLE);
+                                                startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                                            }else{
+                                                // fix this
+                                                Toast.makeText(TeacherLogin.this, "Error. Log in failed as a teacher." + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                                                mprogressLogBar.setVisibility(View.GONE);
+                                            }
+
+                                        }
+                                    });
+
+
+
                                 } else {
                                     Toast.makeText(TeacherLogin.this, "Error. Log in failed." + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                                     mprogressLogBar.setVisibility(View.GONE);

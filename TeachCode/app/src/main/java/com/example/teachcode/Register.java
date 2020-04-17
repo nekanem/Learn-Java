@@ -41,6 +41,7 @@ public class Register extends AppCompatActivity {
     String userID;
     CheckBox mcheckBoxStudent, mcheckBoxTeacher;
     private static final String TAG = "Register";
+    String userType="";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,6 +65,7 @@ public class Register extends AppCompatActivity {
 
         // user already has an account
         FirebaseUser currentUser = firebaseAuth.getCurrentUser();
+
         if (currentUser != null) {
             // direct to main activity
             startActivity(new Intent(getApplicationContext(), MainActivity.class));
@@ -80,6 +82,7 @@ public class Register extends AppCompatActivity {
                 final String phone = mphoneRegEditText.getText().toString();
                 final boolean studentUser = mcheckBoxStudent.isChecked();
                 final boolean teacherUser = mcheckBoxTeacher.isChecked();
+                String userType = "";
 
                 // if email or password is empty
                 if (TextUtils.isEmpty(email)) {
@@ -104,9 +107,17 @@ public class Register extends AppCompatActivity {
                     Toast.makeText(Register.this, "Please select only one role", Toast.LENGTH_LONG).show();
                     return;
                 }
+                if(studentUser){
+                    userType="student";
+                }
+                if(teacherUser){
+                    userType="teacher";
+                }
+
                 progressRegBar.setVisibility(View.VISIBLE);
 
-                // register the user in firebase
+                // register the user in firebaseno
+
                 firebaseAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
@@ -127,17 +138,21 @@ public class Register extends AppCompatActivity {
                             });
                             Toast.makeText(Register.this, "User successfully created.", Toast.LENGTH_SHORT).show();
 
+
+                            userID = firebaseAuth.getCurrentUser().getUid();
+                            DocumentReference documentReference = firestore.collection("users").document(userID);
+                            Map<String, Object> userDB = new HashMap<>();
                             if (studentUser) {
                                 // store user's data into fire store database
-                                userID = firebaseAuth.getCurrentUser().getUid();
-                                DocumentReference documentReference = firestore.collection("users").document(userID);
-                                Map<String, Object> studentDB = new HashMap<>();
 
-                                studentDB.put("fullName", fullName);
-                                studentDB.put("email", email);
-                                studentDB.put("phone", phone);
 
-                                documentReference.set(studentDB).addOnSuccessListener(new OnSuccessListener<Void>() {
+                                userDB.put("fullName", fullName);
+                                userDB.put("email", email);
+                                userDB.put("phone", phone);
+                                userDB.put("userType", "student");
+
+
+                                documentReference.set(userDB).addOnSuccessListener(new OnSuccessListener<Void>() {
                                     @Override
                                     public void onSuccess(Void aVoid) {
                                         Log.d(TAG, "documentRef - onSuccess: user Profile is created for " + userID);
@@ -150,15 +165,13 @@ public class Register extends AppCompatActivity {
                                 });
                             } else if (teacherUser) {
                                 // store user's data into fire store database
-                                userID = firebaseAuth.getCurrentUser().getUid();
-                                DocumentReference documentReference = firestore.collection("teachers").document(userID);
-                                Map<String, Object> teacherDB = new HashMap<>();
 
-                                teacherDB.put("fullName", fullName);
-                                teacherDB.put("email", email);
-                                teacherDB.put("phone", phone);
+                                userDB.put("fullName", fullName);
+                                userDB.put("email", email);
+                                userDB.put("phone", phone);
+                                userDB.put("userType", "teacher");
 
-                                documentReference.set(teacherDB).addOnSuccessListener(new OnSuccessListener<Void>() {
+                                documentReference.set(userDB).addOnSuccessListener(new OnSuccessListener<Void>() {
                                     @Override
                                     public void onSuccess(Void aVoid) {
                                         Log.d(TAG, "documentRef - onSuccess: user Profile is created for " + userID);
