@@ -45,11 +45,12 @@
         android:text="Lesson 1"
         android:textColor="@color/common_google_signin_btn_text_dark_default"
         android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/lessonTwo"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/teachcode"
-        app:layout_constraintVertical_bias="0.283" />
+        app:layout_constraintVertical_bias="0.116" />
 
     <TextView
         android:id="@+id/lessonTwo"
@@ -61,9 +62,10 @@
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/teachcode"
-        app:layout_constraintVertical_bias="0.199" />
+        app:layout_constraintVertical_bias="0.235" />
 
     <TextView
         android:id="@+id/lessonThree"
@@ -73,11 +75,12 @@
         android:text="Lesson 3"
         android:textColor="@color/common_google_signin_btn_text_dark_default"
         android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/lessonFour"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lessonTwo"
-        app:layout_constraintVertical_bias="0.463" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.413" />
 
     <TextView
         android:id="@+id/lessonFour"
@@ -87,11 +90,12 @@
         android:text="Lesson 4"
         android:textColor="@color/common_google_signin_btn_text_dark_default"
         android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/lessonFive"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/teachcode"
-        app:layout_constraintVertical_bias="0.897" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.522" />
 
     <TextView
         android:id="@+id/lessonFive"
@@ -101,26 +105,27 @@
         android:text="Lesson 5"
         android:textColor="@color/common_google_signin_btn_text_dark_default"
         android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/logoutBtn"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/teachcode"
-        app:layout_constraintVertical_bias="0.763" />
+        app:layout_constraintVertical_bias="0.595" />
 
     <TextView
         android:id="@+id/Quiz"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
         android:onClick="quiz"
         android:text="Quiz"
         android:textColor="@color/common_google_signin_btn_text_dark_default"
         android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/logoutBtn"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lessonFive"
-        app:layout_constraintVertical_bias="0.443"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.731"
         tools:ignore="OnClick" />
 
 

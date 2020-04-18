@@ -72,32 +72,32 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void lesson_one(View view) {
-        startActivity(new Intent(getApplicationContext(), LessonOne.class));  // start Login Activity
+        startActivity(new Intent(getApplicationContext(), LessonOne.class));  // Goes to Lesson 1
         finish();
     }
 
     public void lesson_two(View view) {
-        startActivity(new Intent(getApplicationContext(), LessonTwo.class));  // start Login Activity
+        startActivity(new Intent(getApplicationContext(), LessonTwo.class));  // Goes to Lesson 2
         finish();
     }
 
     public void lesson_three(View view) {
-        startActivity(new Intent(getApplicationContext(), LessonThree.class));  // start Login Activity
+        startActivity(new Intent(getApplicationContext(), LessonThree.class));  // Goes to Lesson 3
         finish();
     }
 
     public void lesson_four(View view) {
-        startActivity(new Intent(getApplicationContext(), LessonFour.class));  // start Login Activity
+        startActivity(new Intent(getApplicationContext(), LessonFour.class));  // Goes to Lesson 4
         finish();
     }
 
     public void lesson_five(View view) {
-        startActivity(new Intent(getApplicationContext(), LessonFive.class));  // start Login Activity
+        startActivity(new Intent(getApplicationContext(), LessonFive.class));  // Goes to Lesson 5
         finish();
     }
 
     public void quiz(View view) {
-        startActivity(new Intent(getApplicationContext(), Quiz.class));  // start Login Activity
+        startActivity(new Intent(getApplicationContext(), Quiz.class));  // Goes to Quiz
         finish();
     }
 }

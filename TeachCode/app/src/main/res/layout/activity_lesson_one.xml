@@ -10,13 +10,76 @@
     <TextView
         android:id="@+id/Title"
         android:layout_width="wrap_content"
-        android:text="@string/lesson_1"
+        android:text="Lesson 1: Java Variables and Data Types"
         android:textColor="#F7F2F2"
-        android:textSize="30sp"
+        android:textSize="20sp"
         app:fontFamily="monospace"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        android:gravity="center"
         android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/Info1"
+        android:layout_width="384dp"
+        android:layout_height="302dp"
+        android:text="In Java, there are different types of variables, for example:
+        \n-String - stores text, such as &quot;Hello&quot;. String values are surrounded by double quotes
+        \n-int - stores integers (whole numbers), without decimals, such as 123 or -123
+        \n-float - stores floating point numbers, with decimals, such as 19.99 or -19.99
+        \n-char - stores single characters, such as 'a' or 'B'. Char values are surrounded by single quotes
+        \n-boolean - stores values with two states: true or false
+        \n\n To create a variable, you must specify the type and then assign it a value:
+        \nSyntax: type variable = value;
+        \n\nType is one of Java types as shown above, variable is the name of the variable, the equal sign is used to assign values to the variable"
+        android:textColor="#F7F2F2"
+        android:textSize="12sp"
+        app:fontFamily="monospace"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.481"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.216" />
+
+    <TextView
+        android:id="@+id/Question1"
+        android:layout_width="350dp"
+        android:layout_height="52dp"
+        android:text="Create a variable called name of type String and assign it the value of John. (Follow syntax in above example, space sensitive)"
+        android:textColor="#F7F2F2"
+        android:textSize="12sp"
+        app:fontFamily="monospace"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.689" />
+
+    <EditText
+        android:id="@+id/editText1"
+        android:layout_width="399dp"
+        android:layout_height="55dp"
+        android:hint="Enter answer here"
+        android:textColor="#F7F2F2"
+        android:textColorHint="#F7F2F2"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.812"></EditText>
+
+    <Button
+        android:id="@+id/btnSub"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Submit"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintVertical_bias="0.855"
+        tools:layout_editor_absoluteX="0dp"></Button>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

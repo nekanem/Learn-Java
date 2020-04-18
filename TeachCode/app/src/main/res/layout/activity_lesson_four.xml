@@ -10,7 +10,7 @@
     <TextView
         android:id="@+id/Title"
         android:layout_width="wrap_content"
-        android:text="@string/lesson_4"
+        android:text="Lesson 4: Conditionals"
         android:textColor="#F7F2F2"
         android:textSize="30sp"
         app:fontFamily="monospace"
@@ -18,5 +18,66 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/Info1"
+        android:layout_width="389dp"
+        android:layout_height="307dp"
+        android:text="@string/java_supports_the_usual_logical_conditions_from_mathematics_n_nless_than_a_b_nless_than_or_equal_to_a_b_ngreater_than_a_b_ngreater_than_or_equal_to_a_b_nequal_to_a_b_nnot_equal_to_a_b_n_nyou_can_use_these_conditions_to_perform_different_actions_for_different_situations_n_njava_has_the_following_conditional_statements_n_if_specify_a_block_of_code_to_be_executed_if_a_specified_condition_is_true_nelse_specify_a_block_of_code_to_be_executed_if_the_same_condition_is_false_nelse_if_specify_a_new_condition_to_test_if_the_first_condition_is_false_nswitch_specify_many_alternative_blocks_of_code_to_be_executed_n_example_nif_condition_n_block_of_code_to_be_executed_if_the_condition_is_true_n"
+        android:textColor="#F7F2F2"
+        android:textSize="10sp"
+        app:fontFamily="monospace"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.125" />
+
+    <TextView
+        android:id="@+id/Question1"
+        android:layout_width="350dp"
+        android:layout_height="155dp"
+        android:text="int x = 10;
+\nint y = 12;
+\nif(x > y) {
+\nSystem.out.println(&quot;Apple&quot;);
+\n} else {
+\nSystem.out.println(&quot;Samsung&quot;);
+\n  }
+\n}
+\n\nWhat will be printed if this code is executed?"
+        android:textColor="#F7F2F2"
+        android:textSize="12sp"
+        app:fontFamily="monospace"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Info1"
+        app:layout_constraintVertical_bias="0.046" />
+
+    <EditText
+        android:id="@+id/editText1"
+        android:layout_width="399dp"
+        android:layout_height="55dp"
+        android:hint="Enter answer here"
+        android:textColor="#F7F2F2"
+        android:textColorHint="#F7F2F2"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.416"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Question1"
+        app:layout_constraintVertical_bias="0.158"></EditText>
+
+    <Button
+        android:id="@+id/btnSub"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Submit"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintVertical_bias="0.893"
+        tools:layout_editor_absoluteX="8dp"></Button>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
