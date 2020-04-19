@@ -110,11 +110,13 @@ public class TeacherLogin extends AppCompatActivity {
                                             if(teacher.equals("teacher")){
                                                 Toast.makeText(TeacherLogin.this, "Log in successfully as a teacher.", Toast.LENGTH_SHORT).show();
                                                 mprogressLogBar.setVisibility(View.VISIBLE);
-                                                startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                                                startActivity(new Intent(getApplicationContext(), TeacherHome.class));
                                             }else{
-                                                // fix this
-                                                Toast.makeText(TeacherLogin.this, "Error. Log in failed as a teacher." + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
-                                                mprogressLogBar.setVisibility(View.GONE);
+
+                                                Toast.makeText(TeacherLogin.this, "Your account is of type Student. Please Log in as a student", Toast.LENGTH_LONG).show();
+                                                FirebaseAuth.getInstance().signOut();
+                                                startActivity(new Intent(getApplicationContext(), Login.class));
+
                                             }
 
                                         }

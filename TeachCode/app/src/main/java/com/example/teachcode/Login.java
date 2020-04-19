@@ -17,6 +17,9 @@ import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
@@ -28,6 +31,9 @@ public class Login extends AppCompatActivity {
     TextView mcreateUserLogText, mforgetPassword, mteacherLogSignIn;
     FirebaseAuth firebaseAuth;  // provide by firebase
     ProgressBar mprogressLogBar;
+    FirebaseFirestore db;
+    String userID;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +50,7 @@ public class Login extends AppCompatActivity {
         firebaseAuth = FirebaseAuth.getInstance();
         mprogressLogBar = findViewById(R.id.progressLogBar);
 
+        db = FirebaseFirestore.getInstance();
 
         mloginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -78,9 +85,29 @@ public class Login extends AppCompatActivity {
 
                                 // check if log in is successful or not
                                 if (task.isSuccessful()) {
-                                    Toast.makeText(Login.this, "Log in successfully.", Toast.LENGTH_SHORT).show();
-                                    mprogressLogBar.setVisibility(View.VISIBLE);
-                                    startActivity(new Intent(getApplicationContext(), MainActivity.class));
+
+                                    userID = firebaseAuth.getCurrentUser().getUid();
+                                    DocumentReference documentReference = db.collection("users").document(userID);
+                                    documentReference.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+
+                                        @Override
+                                        public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                                            DocumentSnapshot document = task.getResult();
+                                            String student = document.getString("userType");
+                                            if(student.equals("student")){
+                                                Toast.makeText(Login.this, "Log in successfully as a student.", Toast.LENGTH_SHORT).show();
+                                                mprogressLogBar.setVisibility(View.VISIBLE);
+                                                startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                                            }else{
+                                                // fix this
+                                                Toast.makeText(Login.this, "Your account is of type Teacher. Please Log in as a Teacher", Toast.LENGTH_LONG).show();
+                                                FirebaseAuth.getInstance().signOut();
+                                                startActivity(new Intent(getApplicationContext(), TeacherLogin.class));
+                                            }
+
+                                        }
+                                    });
+
                                 } else {
                                     Toast.makeText(Login.this, "Error. Log in failed." + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                                     mprogressLogBar.setVisibility(View.GONE);
