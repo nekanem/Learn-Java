@@ -6,8 +6,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -39,6 +42,42 @@ public class TeacherHome extends AppCompatActivity {
     TextView studentData;
     ListView student_ListView;
     private ArrayList<String> studentsArray=new ArrayList<>();
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.options, menu);
+        return super.onCreateOptionsMenu(menu);
+
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        int id = item.getItemId();
+
+        if (id == R.id.action_profile) {
+            Intent profileIntent = new Intent(TeacherHome.this, UserProfile.class);
+            startActivity(profileIntent);
+        }
+
+        if (id == R.id.action_settings) {
+            Intent profileIntent = new Intent(TeacherHome.this, Setting.class);
+            startActivity(profileIntent);
+        }
+
+        if (id == R.id.action_home) {
+            Intent homeIntent = new Intent(TeacherHome.this, MainActivity.class);
+            startActivity(homeIntent);
+        }
+
+        if (id == R.id.action_progress) {
+            Intent profileIntent = new Intent(TeacherHome.this, Progress.class);
+            startActivity(profileIntent);
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
+
+
 
 
     @Override
