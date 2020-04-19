@@ -1,25 +1,25 @@
 ## Scrum Meetings
 The team is to meet for 10 days during the two-week sprint - 5 meetings per week. You must decide on a time to record your answers to the questions and then a single commit of the day's responses is to be made into your project repository for that day.
 
-Question    |          Person                                             | 4/7  | 4/8 | 4/9 | 4/10 | 4/11 | day | day |day | day | day |
+Question    |          Person                                             | 4/9  | 4/10 | 4/11 | 4/12 | 4/13 | 4/14 | 4/15 | 4/16 | 4/17 | 4/18 |
 ------------|---------------------------------------------------------------------|-----|-----|-----|-----|-----|-----|-----|----|-----|-----|                                                              
-| What did you complete since the last meeting? | Vy |   
-|            | Pedram |   |
-|            | Paul |    | 
-|            | Nate |  | 
-| What will you accomplish before the next meeting? | Vy |  | 
-|            | Pedram |    | 
-|            | Paul |    |  
-|            | Nate |   |
-| Do you have anything that's getting in the way of doing your work? | Vy |  |   
-|            | Pedram|    | 
-|            | Paul |   | 
-|            | Nate |  | 
-| What insights have you made? |Vy| | 
-|            | Pedram |  | 
-|            | Paul |    | 
-|            | Nate |  | 
-| Do any changes to the project need to be made as a result of your work? |Vy |  | 
-|            | Pedram |    | 
-|            | Paul |   | 
-|            | Nate | |
+| What did you complete since the last meeting? | Vy | Database research | Database research again| Researched testing | Learned about testing | Refactor some code | Wrote down some lesson plans | Got the drop down menu working | Lesson plans | Lesson planning | Lesson planning again | Statistics for grading
+|            | Pedram | SQL database research, might switch over | Figuring out how to separate student with teacher | Research about testing | Research about testing | worked on the classroom | Started coding the differentiation | Coded the seperations | Helped with some lessons | Lesson Planning | Stats for grading
+|            | Paul | Redid some tests, had some errors in them | Tests | Learned about database | Tried to upload grades into database | Helped with refactoring code | Took out some junk tests | Made sure you can access all pages from each page |  Test some lessons | Testing | Test grading measurement
+|            | Nate |  Figuring out how to calculate grades | Figuring out how to calculate grades | Researched for lessons | Create lessons | Create more lessons | Coded lesson 1 | Abstracted ideas for Lesson 2 | More Lessons | Lessons | Wrote final lessons and quiz
+| What will you accomplish before the next meeting? | Vy |  Look over code to find ways to optimize it |  Lean how to do test for future reference | Look over code to find ways to optimize it | Look over code to find ways to optimize it | Look over code to find ways to optimize it | Work on the menu drop box | Help nate with lessons | More lesson plans | Play around with app and tweak anything | Clean up code 
+|            | Pedram |   Figuring out if the switch from firebase to SQL is worth it | Learn how to test | Research differentiating student and teacher | Work on making a classroom on the app | Work on making a classroom on the app |  Keep working on the differentiation | make sure database works properly | change up some earlier lessons | Look around app to find places to improve | make sure everything is in working order 
+|            | Paul | Test cases | Learn about databases | Figure out a a testing error for a certain case | Optimizing test cases | Optimizing test cases | Help V with menu drop box | Test database | Tests | pitch in ideas about lessons | take lessons
+|            | Nate |  research how to upload grades to firebase | lean how to test | Create lessons | Create more lessons | Create more lessons | Work on ideas for lesson 2 | More Lessons | Lesson implementation | More lessons | take lessons
+| Do you have anything that's getting in the way of doing your work? | Vy | Nothing | Nothing | Nothing | Nothing | No | The power went out today | The power out again for bit | My laptop keeps freezing. Time to upgrade RAM | nothing | nothing  
+|            | Pedram|   No |  No |  No |  No |  So far so good | Nothing | Had some allergies | Nothing | nothing | Nothing
+|            | Paul |  Nope | Nope | Nope | Nope | Nope | All is well here | nothing | Nothing | Nothing today |  Not a single thing 
+|            | Nate |  No |  No |  No |  No | No | Not a thing | nothing | None | Nope | N/A
+| What insights have you made? |Vy| No insights for today  | No insights for today |  Nothing I can think of today | Nothing | Nothing | Did not come up with anything | nothing today | Nothing | Not a thing today | Teaching someone to code is a good way of keeping your skills in check 
+|            | Pedram |  Choosing the right database is crucial | Nothing | Nothing | Nothing comes to mind |  Nothing comes to mind | Nothing | Nothing  | Nothing | Nothing | Nothing today
+|            | Paul |   Nothing today | Nothing today | Nothing today | No insights today |  | No insights today | Nothing | nothing  | nothing | I’m glad I tested while the app is developing | Nate does a good job at making lessons
+|            | Nate |  No | No | No | Nothing | Nothing | I can’t believe I struggled with coding when starting |  Nothing |  Nothing | Nothing | Nothing
+| Do any changes to the project need to be made as a result of your work? |Vy |  No | No | No | No | No | No | Nope | Nope | No | No changes needed | 
+|            | Pedram |  Depends on the outcome of the research | Nothing I can think of | Depends on the outcome of the research | Depends on the outcome of making a classroom | Nope | No | No | No | No | Nope   | 
+|            | Paul |  If tests shows a weak point in the code |  If tests shows a weak point in the code |  If tests shows a weak point in the code | If tests shows a weak point in the code | If tests shows a weak point in the code | Depends if testing points out a weakness | If tests expose anything weak | Nope | No | Tests are all running fine so no  | 
+|            | Nate | No | No | No | No | No | Depends on how much content goes in one lesson | Nope | Nah | No | Only if Paul tests something that needs to be fixed |
