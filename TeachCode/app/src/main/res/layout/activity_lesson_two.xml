@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LessonTwo"
+    android:background="@drawable/wallpaper">
+
+    <TextView
+        android:id="@+id/Title"
+        android:layout_width="wrap_content"
+        android:text="@string/lesson_2_operators"
+        android:textColor="#F7F2F2"
+        android:textSize="30sp"
+        app:fontFamily="monospace"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/Info1"
+        android:layout_width="384dp"
+        android:layout_height="302dp"
+        android:text="Operators are used to perform common mathematical operations.
+\n+ 	Addition: Adds together two values; x + y
+\n- 	Subtraction: Subtracts one value from another; x - y
+\n* 	Multiplication: Multiplies two values; x * y
+\n/ 	Division: Divides one value by another; x / y
+\n% 	Modulus: Returns the division remainder; x % y
+\n++ 	Increment: Increases the value of a variable by 1; ++x
+\n-- 	Decrement: Decreases the value of a variable by 1; --x
+\n\n In the example below, we are using the - operator to subtract two values and then assigning the differnce to x which is of type int:
+\n\n int x = 100 - 50;
+\n\n The variable x now holds a value of 50"
+        android:textColor="#F7F2F2"
+        android:textSize="11sp"
+        app:fontFamily="monospace"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.481"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.2" />
+
+    <TextView
+        android:id="@+id/Question1"
+        android:layout_width="350dp"
+        android:layout_height="52dp"
+        android:text="Assign an int variable named num to the sum of 10 and 5 "
+        android:textColor="#F7F2F2"
+        android:textSize="12sp"
+        app:fontFamily="monospace"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.573"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.662" />
+
+    <EditText
+        android:id="@+id/editText1"
+        android:layout_width="399dp"
+        android:layout_height="55dp"
+        android:hint="Enter answer here"
+        android:textColor="#F7F2F2"
+        android:textColorHint="#F7F2F2"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.781"></EditText>
+
+    <Button
+        android:id="@+id/btnSub"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Submit"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintVertical_bias="0.844"
+        tools:layout_editor_absoluteX="6dp"></Button>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,34 @@
+<resources>
+    <string name="app_name">TeachCode</string>
+    <string name="teach_code"><![CDATA[Teach Code >]]></string>
+    <string name="create_new_account">Create New Account</string>
+    <string name="email">Email:</string>
+    <string name="name">Name</string>
+    <string name="password">Password:</string>
+    <string name="already_registered">Already Registered</string>
+    <string name="register">Register</string>
+    <string name="phone">Phone:</string>
+    <string name="logout">Logout</string>
+    <string name="login">Login</string>
+    <string name="already_a_user">Already A User?</string>
+    <string name="full_name">Full Name:</string>
+    <string name="login_as_existing_user">Login as Existing User</string>
+    <string name="create_new_account_register">Create New Account Register</string>
+    <string name="email_register">Email Register</string>
+    <string name="password_register">Password Register</string>
+    <string name="sign_in">Sign In</string>
+    <string name="your_profile" />
+    <string name="your_name">Your Name:</string>
+    <string name="to_do">To do</string>
+    <string name="email_not_verify">EMAIL NOT VERIFY</string>
+    <string name="your_email">Your email</string>
+    <string name="teachcode">TeachCode</string>
+    <string name="lesson_1">Lesson 1</string>
+    <string name="lesson_2">Lesson 2</string>
+    <string name="lesson_3">Lesson 3</string>
+    <string name="lesson_4">Lesson 4</string>
+    <string name="lesson_5">Lesson 5</string>
+    <string name="quiz">Quiz</string>
+    <string name="lesson_2_operators">Lesson 2: Operators</string>
+    <string name="java_supports_the_usual_logical_conditions_from_mathematics_n_nless_than_a_b_nless_than_or_equal_to_a_b_ngreater_than_a_b_ngreater_than_or_equal_to_a_b_nequal_to_a_b_nnot_equal_to_a_b_n_nyou_can_use_these_conditions_to_perform_different_actions_for_different_situations_n_njava_has_the_following_conditional_statements_n_if_specify_a_block_of_code_to_be_executed_if_a_specified_condition_is_true_nelse_specify_a_block_of_code_to_be_executed_if_the_same_condition_is_false_nelse_if_specify_a_new_condition_to_test_if_the_first_condition_is_false_nswitch_specify_many_alternative_blocks_of_code_to_be_executed_n_example_nif_condition_n_block_of_code_to_be_executed_if_the_condition_is_true_n"><![CDATA[Java supports the usual logical conditions from mathematics: \n\nLess than: a < b \nLess than or equal to: a <= b \nGreater than: a > b \nGreater than or equal to: a >= b \nEqual to a == b \nNot Equal to: a != b \n\nYou can use these conditions to perform different actions for different situations. \n\nJava has the following conditional statements: \nif: specify a block of code to be executed, if a specified condition is true \nelse: specify a block of code to be executed, if the same condition is false \nelse if: specify a new condition to test, if the first condition is false \nswitch: specify many alternative blocks of code to be executed \n\nExample: \nif (condition) { \n// block of code to be executed if the condition is true \n}]]></string>
+</resources>

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LessonThree"
+    android:background="@drawable/wallpaper">
+
+    <TextView
+        android:id="@+id/Title"
+        android:layout_width="wrap_content"
+        android:text="Lesson 3: Booleans"
+        android:textColor="#F7F2F2"
+        android:textSize="30sp"
+        app:fontFamily="monospace"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/Info1"
+        android:layout_width="384dp"
+        android:layout_height="302dp"
+        android:text="Often in prograaming you will need a datat type that can only have two values, such as, yes/no, true/false. Fpr these situations, you have to use a boolean data type, which can take the values true or false. A boolean is declared by using the word boolean.
+\n\n\nExample:
+\n\nboolean test = true;
+\nboolean test2 = false;
+\nSystem.out.println(test); //Outputs true
+\nSystem.out.println(test2); //Outputs false
+\n\n\nExample2:
+\n\nint x = 10;
+\nint y = 11;
+\nSystem.out.println(x > y); //Outputs false, becasue 10 is not higher than 11"
+        android:textColor="#F7F2F2"
+        android:textSize="11sp"
+        app:fontFamily="monospace"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.592"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.13" />
+
+    <TextView
+        android:id="@+id/Question1"
+        android:layout_width="350dp"
+        android:layout_height="52dp"
+        android:text="Given: int x = 10;
+\nWrite a line of code that will print true to the console, checking if x is equal to 10"
+        android:textColor="#F7F2F2"
+        android:textSize="12sp"
+        app:fontFamily="monospace"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.656" />
+
+    <EditText
+        android:id="@+id/editText1"
+        android:layout_width="399dp"
+        android:layout_height="55dp"
+        android:hint="Enter answer here"
+        android:textColor="#F7F2F2"
+        android:textColorHint="#F7F2F2"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.809"></EditText>
+
+    <Button
+        android:id="@+id/btnSub"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Submit"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintVertical_bias="0.853"
+        tools:layout_editor_absoluteX="0dp"></Button>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
